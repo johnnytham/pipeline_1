@@ -6,12 +6,12 @@ stages
  stage('Non-parallel stage ')
  {
  agent {label "master"}
- steps { git 'https://github.com/alant12345/pipeline.git' }
+ steps { git 'https://github.com/johnnytham/pipeline_1.git' }
  }
  stage('Build')
  {
  agent {label "master"}
- steps {bat 'Testing.bat' }
+ steps {bat 'testing.bat' }
  }
  stage('Run in parallel')
  {
@@ -20,7 +20,7 @@ stages
  stage('Test1 on master')
  {
  agent {label " master"}
- steps {bat'Testing.bat' }
+ steps {bat'testing.bat' }
  }
  stage('Test2 on slave machine')
  {
@@ -32,7 +32,7 @@ stages
  stage('Deploy')
  {
  agent {label "master"}
- steps {bat 'Deploying.bat' }
+ steps {bat 'deploying.bat' }
  }
 }
 
